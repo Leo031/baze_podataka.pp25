@@ -1,4 +1,4 @@
-# C:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\Users\Leo380\Documents\edunovapp25\zupanija.sql
+# C:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\Users\Leo380\Documents\GitHub\baze_podataka.pp25\zupanija.sql
 drop database if exists regionalna_samouprava;
 create database regionalna_samouprava default charset utf8mb4;
 use regionalna_samouprava;
@@ -7,6 +7,20 @@ create table zupanija (
 sifra int not null primary key auto_increment,
 naziv varchar(50),
 zupan varchar(50)
+);
+
+create table zupan(
+    sifra int not null primary key auto_increment.
+    ime varchar(50),
+    prezime varchar(50),
+    zupanija int not null
+);
+
+create table mjesto(
+    sifra  int not null primary key auto_increment,
+    opcina int not null,
+    naziv varchar(50),
+    zupanija int not null
 );
 
 create table opcina (
@@ -38,3 +52,4 @@ insert into opcina (zupanija,naziv)
 values (2, 'Metković');
 insert into opcina(zupanija,naziv)
 values(3,'Dubrava');
+
