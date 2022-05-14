@@ -3,14 +3,14 @@ drop database if exists regionalna_samouprava;
 create database regionalna_samouprava default charset utf8mb4;
 use regionalna_samouprava;
 
-create table zupanija (
+create table zupanija(
 sifra int not null primary key auto_increment,
 naziv varchar(50),
 zupan varchar(50)
 );
 
 create table zupan(
-    sifra int not null primary key auto_increment.
+    sifra int not null primary key auto_increment,
     ime varchar(50),
     prezime varchar(50),
     zupanija int not null
@@ -23,33 +23,55 @@ create table mjesto(
     zupanija int not null
 );
 
-create table opcina (
+create table opcina(
     sifra int not null primary key auto_increment,
     zupanija int not null,
-    naziv varchar(30)
+    naziv varchar(50)
 );
+
 alter table opcina add foreign key (zupanija) references zupanija(sifra);
+alter table mjesto add foreign key (opcina) references opcina(sifra);
+alter table zupan add foreign key (zupanija) references zupanija(sifra);
 
 insert into zupanija (naziv)
-values ('Osječko-baranjska županija');
-
+values ('Splitsko-dalmatinska zupanija');
 
 insert into zupanija (naziv)
-values ('Dubrovačko-neretvanska');
+values ('Istarska');
 
 insert into zupanija (naziv, zupan)
-values ('Zagrebačka', 'Željko Jukić');
+values ('Zadarska', 'Božidar Longin');
 
 insert into opcina (zupanija, naziv)
-values (1, 'Vuka');
+values (1, 'Seget');
 insert into opcina (zupanija,naziv)
-values (1,'Tenja');
+values (1,'Jelsa');
+insert into opcina (zupanija, naziv)
+values (1,'Dugi rat');
+
 
 insert into opcina (zupanija,naziv)
-values (2,'Općina Ploče');
-
+values (2,'Fažana');
 insert into opcina (zupanija,naziv)
-values (2, 'Metković');
+values (2, 'Medulin');
 insert into opcina(zupanija,naziv)
-values(3,'Dubrava');
+values(2,'Motovun');
 
+insert into opcina (zupanija,naziv)
+values (3,'Kali');
+insert into opcina (zupanija,naziv)
+values (3, 'Povljana');
+insert into opcina(zupanija,naziv)
+values(3,'Sveti Filip i Jakov');
+
+insert into mjesto (zupanija,opcina,naziv)
+values (1,1 'Bristivica');
+insert into mjesto (zupanija,opcina,naziv)
+values (1,2 'Vrisnik');
+insert into mjesto (zupanija,opcina,naziv)
+values (1,3 'Jesenice');
+
+insert into mjesto (zupanija,opcina,naziv)
+values (2,1 'Fažana');
+insert into mjesto (zupanij,opcina,naziv)
+values (2,2 'Valbandon');
