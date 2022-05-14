@@ -58,20 +58,27 @@ insert into opcina(zupanija,naziv)
 values(2,'Motovun');
 
 insert into opcina (zupanija,naziv)
-values (3,'Kali');
+values (3,'Posedarje');
 insert into opcina (zupanija,naziv)
-values (3, 'Povljana');
+values (3, 'Vrsi');
 insert into opcina(zupanija,naziv)
-values(3,'Sveti Filip i Jakov');
+values(3,'Škabrnja');
 
 insert into mjesto (zupanija,opcina,naziv)
-values (1,1 'Bristivica');
+values (1,1, 'Bristivica');
 insert into mjesto (zupanija,opcina,naziv)
-values (1,2 'Vrisnik');
+values (1,2, 'Vrisnik');
 insert into mjesto (zupanija,opcina,naziv)
-values (1,3 'Jesenice');
+values (1,3, 'Jesenice');
 
 insert into mjesto (zupanija,opcina,naziv)
-values (2,1 'Fažana');
-insert into mjesto (zupanij,opcina,naziv)
-values (2,2 'Valbandon');
+values (2,1, 'Fažana');
+insert into mjesto (zupanija,opcina,naziv)
+values (2,2, 'Valbandon');
+
+insert into mjesto (zupanija,opcina,naziv)
+values (3,1, 'Grgurice');
+insert into mjesto (zupanija,opcina,naziv)
+values (3,2, 'Poljica');
+insert into mjesto (zupanija,opcina,naziv)
+values (3,3, 'Prkos');
